@@ -1,0 +1,9 @@
+{
+  "name": "firis",
+  "displayName": "firis",
+  "PermissionsAndroid":{
+    "PERMISSIONS":[
+      "CAMERA"
+    ]
+  }
+}

@@ -1,16 +1,17 @@
+import 'react-native-gesture-handler';
 import React, { useState } from 'react';
-import { StyleSheet,PermissionsAndroid } from 'react-native';
+import { StyleSheet, PermissionsAndroid } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Qrcode from './screens/Qrcode'; // Import the Qrcode screen component
-import Images from './screens/Images'; // Import the Images screen component
-import LoginScreen from './screens/Login'; // Import the LoginScreen component
-import Patients from './screens/Patients'; // Import the Patients component
-import Patient from './screens/Patient'; // Import the Patients component
-import New from './screens/New';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import CustomDrawer from './components/menu/CustomDrawer';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import CustomDrawer from './src/components/menu/CustomDrawer';
+import Qrcode from './src/screens/Qrcode'; // Import the Qrcode screen component
+import Images from './src/screens/Images'; // Import the Images screen component
+import LoginScreen from './src/screens/Login'; // Import the LoginScreen component
+import Patients from './src/screens/Patients'; // Import the Patients component
+import Patient from './src/screens/Patient'; // Import the Patients component
+import New from './src/screens/New';
 
 const screens = [
   //{ name: 'Images', component: Images, iconName: 'images' },
@@ -41,7 +42,7 @@ const requestCameraPermission = async () => {
   }
 };
 
-const App = () => {
+export default function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [user, setuser] = useState(false);
 
@@ -130,14 +131,11 @@ const App = () => {
         <LoginScreen onLogin={handleLogin} />
       )}
     </NavigationContainer>
-
   );
-};
+}
 
 const styles = StyleSheet.create({
-  hide:{
-    display: 'none'
-  }
-})
-
-export default App;
+  hide: {
+    display: 'none',
+  },
+});
